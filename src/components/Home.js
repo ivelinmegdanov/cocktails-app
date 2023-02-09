@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CocktailCard } from "./CoctailCard";
+import { CocktailCard } from "./CocktailCard";
 
 export const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,12 +27,9 @@ export const Home = () => {
   return (
     <div>
       <h1>Cocktails</h1>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={handleChange}
-        placeholder="Search cocktails"
-      />
+      <div className="cocktails__search">
+        <input className="search" type="text" value={searchTerm} onChange={handleChange} placeholder="Search cocktails" />
+      </div>
       <div className="coctails">
         {loading || cocktails == null ? ( <p>No elements</p> ) : 
         (
