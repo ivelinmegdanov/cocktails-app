@@ -26,10 +26,10 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Cocktails</h1>
       <div className="cocktails__search">
         <input className="search" type="text" value={searchTerm} onChange={handleChange} placeholder="Search cocktails" />
       </div>
+      <h1 className="cocktails__title">Cocktails</h1>
       <div className="coctails">
         {loading || cocktails == null ? ( <p>No elements</p> ) : 
         (

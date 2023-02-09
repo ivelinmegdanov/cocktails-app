@@ -24,11 +24,17 @@ body {
     width: 13em;
     border-radius: 1rem;
     color: black;
-    cursor: pointer;
     width: 400px;
 }
 .search:focus {
     outline-color: black;
+}
+
+.cocktails__title {
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 45px;
 }
 
 .cocktail__card {
