@@ -11,7 +11,7 @@ export const CocktailCard = (cocktail) => {
         <h3 className="card__title">{cocktail.cocktail.strDrink}</h3>
         <p className="card__desc">{cocktail.cocktail.strInstructions}</p>
         <div className="card__buttons">
-          <Link to={`/cocktails/${cocktail.cocktail.idDrink}`} state={{ folder: "braids" }} className="card__button">Details</Link>
+          <Link to={`/cocktails/${cocktail.cocktail.idDrink}`} className="card__button">Details</Link>
         </div>
       </div>
     </div>

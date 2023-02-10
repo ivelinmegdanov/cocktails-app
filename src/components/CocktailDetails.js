@@ -23,10 +23,11 @@ export const CocktailDetails = () => {
         <img className="card__img" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
       </div>
       <div className="details__props">
-        <h1>{cocktail.strDrink}</h1>
-        <p>Category: {cocktail.strCategory}</p>
-        <p>Glass: {cocktail.strGlass}</p>
-        <p>Instructions: {cocktail.strInstructions}</p>
+        <h1 className="details__title">{cocktail.strDrink}</h1>
+        <p className="details__desc">Alcoholic: {cocktail.strAlcoholic}</p>
+        <p className="details__desc">Category: {cocktail.strCategory}</p>
+        <p className="details__desc">Glass: {cocktail.strGlass}</p>
+        <p className="details__desc">Instructions: {cocktail.strInstructions}</p>
       </div>
     </div>
   );

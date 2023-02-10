@@ -33,6 +33,7 @@ body {
     margin-top: 30px;
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 .search {
     background-color: #eee;
@@ -46,6 +47,21 @@ body {
 }
 .search:focus {
     outline-color: black;
+}
+
+.random__btn {
+    transition: all .3s ease;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+.random__btn:hover {
+    transform: scale(1.05);
+}
+
+.random__cocktail {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
 }
 
 .cocktails__title {
@@ -106,13 +122,26 @@ body {
 }
 
 .cocktail__details {
+    margin-top: 100px;
     display: flex;
     gap: 50px;
     padding: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    box-shadow: 0 0 10px #ffffff;
 }
 .details__img {
     width: 30%;
 }
 .details__props {
     width: 70%;
+}
+.details__title {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.details__desc {
+    font-size: 20px;
 }
