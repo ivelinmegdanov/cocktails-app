@@ -13,7 +13,7 @@ A "Get Random Cocktail" button that shows a random cocktail from the API.
 Display which cocktails have not changed and which have been updated since being favorited.
 
 ### Using React.js.
-### Using the Cocktails API.
+### Using TheCocktailsDB API.
 ### Works on the most major browsers (Chrome, Safari, Firefox, Opera and Brave).
 
 ## How to Use
