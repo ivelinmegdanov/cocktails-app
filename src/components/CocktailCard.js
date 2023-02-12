@@ -23,6 +23,7 @@ export const CocktailCard = (cocktail) => {
   return (
     <div className="cocktail__card">
       <div className="card__img">
+        {new Date(cocktail.cocktail.dateModified).getTime() > new Date(cocktail.cocktail.dateFavorited).getTime() ? <h1 className="card__label">This cocktail has been modified since you favorited it</h1> : <></>}
         <img className="card__img" src={cocktail.cocktail.strDrinkThumb} alt={cocktail.cocktail.strDrink} />
       </div>
       <div className="card__props">
