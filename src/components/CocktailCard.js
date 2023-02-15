@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
-export const CocktailCard = (cocktail) => {
+export const CocktailCard = ({cocktail}) => {
   const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
 
   const handleAddToFavorites = () => {
     let favoritesList = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFavorite = favoritesList.some((item) => item.idDrink === cocktail.cocktail.idDrink);
+    const isFavorite = favoritesList.some((item) => item.idDrink === cocktail.idDrink);
   
     if (isFavorite) {
-      favoritesList = favoritesList.filter((item) => item.idDrink !== cocktail.cocktail.idDrink);
+      favoritesList = favoritesList.filter((item) => item.idDrink !== cocktail.idDrink);
     } else {
       const currentDate = new Date();
-      const cocktailWithDate = { ...cocktail.cocktail, dateFavorited: currentDate };
+      const cocktailWithDate = { ...cocktail, dateFavorited: currentDate };
       favoritesList.push(cocktailWithDate);
     }
   
@@ -23,16 +23,16 @@ export const CocktailCard = (cocktail) => {
   return (
     <div className="cocktail__card">
       <div className="card__img">
-        {new Date(cocktail.cocktail.dateModified).getTime() > new Date(cocktail.cocktail.dateFavorited).getTime() ? <h1 className="card__label">This cocktail has been modified since you favorited it</h1> : <></>}
-        <img className="card__img" src={cocktail.cocktail.strDrinkThumb} alt={cocktail.cocktail.strDrink} />
+        {new Date(cocktail.dateModified).getTime() > new Date(cocktail.dateFavorited).getTime() ? <h1 className="card__label">This cocktail has been modified since you favorited it</h1> : <></>}
+        <img className="card__img" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
       </div>
       <div className="card__props">
-        <h3 className="card__title">{cocktail.cocktail.strDrink}</h3>
-        <p className="card__desc">{cocktail.cocktail.strInstructions}</p>
+        <h3 className="card__title">{cocktail.strDrink}</h3>
+        <p className="card__desc">{cocktail.strInstructions}</p>
         <div className="card__buttons">
-          <Link to={`/cocktails/${cocktail.cocktail.idDrink}`} className="card__button">Details</Link>
+          <Link to={`/cocktails/${cocktail.idDrink}`} className="card__button">Details</Link>
           <button className="card__button" onClick={handleAddToFavorites}>
-            {favorites && favorites.some((item) => item.idDrink === cocktail.cocktail.idDrink) ? "★" : "☆"}
+            {favorites && favorites.some((item) => item.idDrink === cocktail.idDrink) ? "★" : "☆"}
           </button>
         </div>
       </div>
