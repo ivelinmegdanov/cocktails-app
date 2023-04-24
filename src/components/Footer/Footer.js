@@ -35,7 +35,9 @@ export const Footer = () => (
       <FooterSection>
         <FooterTitle>Contact Us</FooterTitle>
         <FooterContact>
-          <p>088 933 7266</p>
+          <FooterContactLink href="tel:0889337266">
+            088 933 7266
+          </FooterContactLink>
           <FooterContactLink href="mailto:ivelin@devlabs.bg">
             ivelin@devlabs.bg
           </FooterContactLink>

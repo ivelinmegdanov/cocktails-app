@@ -194,6 +194,17 @@ export const CocktailContainer = styled.div`
    .loader-square:nth-of-type(7) {
     animation-delay: -10s;
    }
+
+   @media screen and (max-width: 768px) {
+    .cocktails__search {
+      padding: 0px 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+    .search {
+      width: 100%;
+    }
+    }
 `;
 
 export const CocktailCardContainer = styled.div`
@@ -255,6 +266,10 @@ export const CocktailCardContainer = styled.div`
   }
   .card__button:hover {
     box-shadow: 0px 0px 11px 1px rgb(255 255 255 / 80%);
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
   }
 `;
 

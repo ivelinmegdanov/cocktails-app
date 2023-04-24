@@ -15,6 +15,10 @@ export const FooterInnerContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-top: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const FooterSection = styled.div`
@@ -36,6 +40,10 @@ export const FooterLinks = styled.ul`
   flex-direction: column;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const FooterLink = styled(Link)`
@@ -58,6 +66,10 @@ export const FooterContact = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const FooterContactLink = styled.a`
