@@ -1,161 +1,19 @@
 body {
-    background-color: #050505;
+  background-repeat: repeat;
+  background-position: top left;
+  background: url("https://media.discordapp.net/attachments/727243562282123355/1088810577561923716/90545bg_finished.png?width=449&height=449");
+  min-height: 100vh;
+  position: relative;
 }
 
-.navbar {
-    background-color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-.navbar__link {
-    color: black;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-.navbar__link:hover {
-    color: rgba(0, 0, 0, 0.652);
+@media (max-width: 1058px) {
+  .cocktail__card {
+    width: 40%;
+  }
 }
 
-.coctails {
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 50px;
-}
-
-.cocktails__search {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.search {
-    background-color: #eee;
-    border: none;
-    padding: 1rem;
-    font-size: 1rem;
-    width: 13em;
-    border-radius: 1rem;
-    color: black;
-    width: 400px;
-}
-.search:focus {
-    outline-color: black;
-}
-
-.random__btn {
-    transition: all .3s ease;
-    border-radius: 15px;
-    padding: 5px 15px;
-}
-.random__btn:hover {
-    transform: scale(1.05);
-}
-
-.random__cocktail {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-}
-
-.cocktails__title {
-    color: white;
-    margin-top: 50px;
-    text-align: center;
-    font-size: 45px;
-}
-
-.cocktail__card {
-    transition: all .3s ease;
-    width: 30%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    align-items: center;
-    box-shadow: 0px 0px 11px 1px rgb(255 255 255 / 80%);
-}
-.cocktail__card:hover {
-    transform: scale(1.05);
-}
-.card__img {
-    width: 100%;
-}
-.card__label {
-    background-color: white;
-    font-size: 20px;
-    text-align: center;
-}
-.card__props {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px 20px;
-}
-.card__title {
-    color: white;
-    margin-top: 20px;
-    font-size: 20px;
-}
-.card__desc {
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    margin-top: 10px;
-}
-.card__buttons {
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-}
-.card__button {
-    transition: all .2s ease;
-    background-color: white;
-    padding: 5px 15px;
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    margin-top: 10px;
-    border-radius: 15px;
-}
-.card__button:hover{
-    box-shadow: 0px 0px 11px 1px rgb(255 255 255 / 80%);
-}
-
-.cocktail__details {
-    margin-top: 100px;
-    display: flex;
-    gap: 50px;
-    padding: 20px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    box-shadow: 0 0 10px #ffffff;
-}
-.details__img {
-    width: 30%;
-}
-.details__props {
-    width: 70%;
-}
-.details__title {
-    margin-bottom: 20px;
-    font-size: 40px;
-}
-.details__desc {
-    font-size: 20px;
-}
-
-.favorites__title {
-    color: white;
-    margin-top: 40px;
-    font-size: 40px;
-    text-align: center;
+@media (max-width: 768px) {
+  .cocktail__card {
+    width: 80%;
+  }
 }

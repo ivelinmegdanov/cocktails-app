@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { CocktailCard } from "./CocktailCard";
 
-export const Home = () => {
+import {  CocktailContainer } from './styles';
+
+export const Cocktail = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cocktails, setCocktails] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -10,12 +12,22 @@ export const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
-      );
-      const result = await response.json();
-      setCocktails(result.drinks);
-      setLoading(false);
+      if(searchTerm){
+        const response = await fetch(
+          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
+        );
+        const result = await response.json();
+        setCocktails(result.drinks);
+        setLoading(false);
+      } else {
+        const response = await fetch(
+          `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink`
+        );
+        const result = await response.json();
+        console.log(result);
+        setCocktails(result.drinks);
+        setLoading(false);
+      }
     };
 
     fetchData();
@@ -34,7 +46,7 @@ export const Home = () => {
   };
 
   return (
-    <div>
+    <CocktailContainer>
       <div className="cocktails__search">
         <input className="search" type="text" value={searchTerm} onChange={handleChange} placeholder="Search cocktails" />
         <button className="random__btn" onClick={handleRandomCocktail}>Random Cocktail</button>
@@ -44,13 +56,23 @@ export const Home = () => {
       </div>
       <h1 className="cocktails__title">Cocktails</h1>
       <div className="coctails">
-        {loading || cocktails == null ? ( <p>No elements</p> ) : 
+        {loading || cocktails == null ? ( 
+          <div class="loader">
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          </div>
+         ) : 
         (
           cocktails.map((cocktail) => (
             <CocktailCard key={cocktail.idDrink} cocktail={cocktail} />
           ))
         )}
       </div>
-    </div>
+    </CocktailContainer>
   );
 };

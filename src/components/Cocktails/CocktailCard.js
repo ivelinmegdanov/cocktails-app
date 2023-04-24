@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
-export const CocktailCard = ({cocktail}) => {
+import { CocktailCardContainer } from './styles';
+
+export const CocktailCard = ({cocktail, handleRemove}) => {
   const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
 
   const handleAddToFavorites = () => {
@@ -10,6 +12,9 @@ export const CocktailCard = ({cocktail}) => {
   
     if (isFavorite) {
       favoritesList = favoritesList.filter((item) => item.idDrink !== cocktail.idDrink);
+      if(handleRemove){
+        handleRemove(cocktail.idDrink);
+      }
     } else {
       const currentDate = new Date();
       const cocktailWithDate = { ...cocktail, dateFavorited: currentDate };
@@ -21,7 +26,7 @@ export const CocktailCard = ({cocktail}) => {
   };
 
   return (
-    <div className="cocktail__card">
+    <CocktailCardContainer>
       <div className="card__img">
         {new Date(cocktail.dateModified).getTime() > new Date(cocktail.dateFavorited).getTime() ? <h1 className="card__label">This cocktail has been modified since you favorited it</h1> : <></>}
         <img className="card__img" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
@@ -36,6 +41,6 @@ export const CocktailCard = ({cocktail}) => {
           </button>
         </div>
       </div>
-    </div>
+    </CocktailCardContainer>
   );
 };
