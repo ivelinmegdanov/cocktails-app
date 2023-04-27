@@ -46,10 +46,15 @@ export const OnlineBarSection = styled.div`
   
 
   img {
-    width: 100%;
+    width: 70%;
     height: auto;
     margin-bottom: 20px;
     box-shadow: rgb(255 255 255 / 80%) 0px 0px 11px 1px;
     filter: brightness(80%)
   }
+
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+    }
 `;

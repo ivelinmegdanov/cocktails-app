@@ -34,4 +34,20 @@ export const NavbarComponent = styled.nav`
     .navbar__link:hover {
         color: rgba(0, 0, 0, 0.652);
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    
+        .links {
+          flex-direction: column;
+          gap: 20px;
+          padding: 0;
+          text-align: center;
+          padding: 30px 20px
+        }
+    
+        .navbar__link {
+          font-size: 18px;
+        }
+      }
 `;

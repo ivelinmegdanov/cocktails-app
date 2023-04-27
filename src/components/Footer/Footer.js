@@ -1,4 +1,5 @@
 import React from "react";
+import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 import {
   FooterContainer,
@@ -10,6 +11,8 @@ import {
   FooterContact,
   FooterContactLink,
   FooterRights,
+  Socials,
+  SocialIconLink,
 } from "./styles";
 
 export const Footer = () => (
@@ -31,6 +34,20 @@ export const Footer = () => (
             <FooterLink to="/favorites">Favorites</FooterLink>
           </li>
         </FooterLinks>
+      </FooterSection>
+      <FooterSection>
+        <FooterTitle>Follow Us</FooterTitle>
+        <Socials>
+          <SocialIconLink href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <FaInstagram />
+          </SocialIconLink>
+          <SocialIconLink href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <FaFacebook />
+          </SocialIconLink>
+          <SocialIconLink href="https://twitter.com" target="_blank" aria-label="Twitter">
+            <FaTwitter />
+          </SocialIconLink>
+        </Socials>
       </FooterSection>
       <FooterSection>
         <FooterTitle>Contact Us</FooterTitle>

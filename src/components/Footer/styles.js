@@ -32,6 +32,7 @@ export const FooterTitle = styled.h2`
   font-size: 24px;
   letter-spacing: 2px;
   margin-bottom: 20px;
+  text-align: center;
 `;
 
 export const FooterLinks = styled.ul`
@@ -87,4 +88,21 @@ export const FooterRights = styled.p`
   margin-top: 50px;
   font-size: 14px;
   text-align: center;
+`;
+
+export const Socials = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+`;
+
+export const SocialIconLink = styled.a`
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  &:hover {
+    color: #ccc;
+    transition: 0.3s ease-out;
+  }
 `;
